@@ -1,5 +1,5 @@
 from selenium import webdriver;
-from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.select import Select ## import necessario para poder selecionar "listas"
 import time;
 
 navegador = webdriver.Chrome();
@@ -28,6 +28,11 @@ print(texto)
 # selecionando opções em um select que permite só uma resposta
 selecionar = navegador.find_element("name","my-select");
 select = Select(selecionar) # para isso precisamos importar o SELECT
-select.select_by_index(3) # selecionando em si
+select.select_by_index(3) # selecionando em si pela posição da opção
+
+# preenchendo o input de cidade
+escolherCidade = navegador.find_element("name","my-datalist");
+escolherCidade.click()
+escolherCidade.send_keys("São paulo")
 
 time.sleep(5)
