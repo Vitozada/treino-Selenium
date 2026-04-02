@@ -20,5 +20,8 @@ password_input[1].send_keys("senha123")
 areaTexto = navegador.find_element("name","my-textarea");
 areaTexto.send_keys("Um texto sendo colocado no textArea da pagina de treinar preenchimento de formulario entregue na documentação do Selenium!!")
 
+inputDesabilitado = navegador.find_element("name","my-readonly")
+texto = inputDesabilitado.get_attribute("value") # exemplo de como pegar texto de algum input 
+print(texto)
 
 time.sleep(5)
