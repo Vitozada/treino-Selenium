@@ -1,4 +1,5 @@
 from selenium import webdriver;
+from selenium.webdriver.support.select import Select
 import time;
 
 navegador = webdriver.Chrome();
@@ -23,5 +24,10 @@ areaTexto.send_keys("Um texto sendo colocado no textArea da pagina de treinar pr
 inputDesabilitado = navegador.find_element("name","my-readonly")
 texto = inputDesabilitado.get_attribute("value") # exemplo de como pegar texto de algum input 
 print(texto)
+
+# selecionando opções em um select que permite só uma resposta
+selecionar = navegador.find_element("name","my-select");
+select = Select(selecionar) # para isso precisamos importar o SELECT
+select.select_by_index(3) # selecionando em si
 
 time.sleep(5)
