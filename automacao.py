@@ -62,6 +62,17 @@ cor.send_keys("#0000ff") # para preencher o input de color, precisa colocar o he
 opcaoData = navegador.find_element("name","my-date")
 opcaoData.send_keys("17/08/2006")
 
+#input RANGE Usando javaScript
+# usei o copilot para entender como mexer no input RANGE retornando esse codigo
+inputRange = navegador.find_element("name","my-range")
+navegador.execute_script("""  
+    arguments[0].value = 9; 
+    arguments[0].dispatchEvent(new Event('input'));
+    arguments[0].dispatchEvent(new Event('change'));
+""", inputRange) # antes de colocar o valor ver qual é o min e o max do INPUT
 
+# enviando o formulario
+enviar = navegador.find_element("css selector","button") # achando elemento pelo CSS
+enviar.click()
 
 time.sleep(5)
