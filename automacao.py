@@ -1,5 +1,5 @@
 from selenium import webdriver;
-from selenium.webdriver.support.select import Select ## import necessario para poder selecionar "listas"
+from selenium.webdriver.support.select import Select ## import necessario para poder selecionar os elementos chamados Select em html
 import time;
 
 navegador = webdriver.Chrome();
