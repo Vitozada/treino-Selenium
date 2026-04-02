@@ -35,4 +35,33 @@ escolherCidade = navegador.find_element("name","my-datalist");
 escolherCidade.click()
 escolherCidade.send_keys("São paulo")
 
+#enviando o arquivo para o input
+botaoArquivo = navegador.find_element("name","my-file")
+botaoArquivo.send_keys(r"C:\exemplo\teste\dados.txt")
+
+#clickando nos CheckBox
+
+navegador.find_element("id","my-check-1").click()
+navegador.find_element("id","my-check-1").click()
+navegador.find_element("id","my-check-2").click() # deixar os dois selecionados ao mesmo tempo
+
+# clickando nos RADIO
+
+radios = navegador.find_elements("name","my-radio")
+radios[1].click()
+radios[0].click()
+radios[1].click()
+
+# input colors
+
+cor = navegador.find_element("name","my-colors")
+cor.send_keys("#0000ff") # para preencher o input de color, precisa colocar o hexadecimal da cor desejada
+
+# input de data
+
+opcaoData = navegador.find_element("name","my-date")
+opcaoData.send_keys("17/08/2006")
+
+
+
 time.sleep(5)
